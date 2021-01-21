@@ -10,14 +10,15 @@ export default function AppPage() {
       <h1>Bem vindo a pagina app</h1>
       {!session && (
         <div className="text-3xl">
-          Not signed in <br />
-          <button onClick={() => signIn("auth0")}>Sign in</button>
+          Não está logado
+          <br />
+          <button onClick={() => signIn("auth0")}>Entrar</button>
         </div>
       )}
       {session && (
         <>
-          Signed in as {session.user.email} <br />
-          <button onClick={signOut}>Sign out</button>
+          Logado com {session.user.email} <br />
+          <button onClick={signOut}>Sair</button>
         </>
       )}
       {loading && (

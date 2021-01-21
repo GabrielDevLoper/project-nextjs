@@ -9,15 +9,16 @@ export default function IndexPage() {
       <Nav />
       {!session && (
         <div className="text-3xl">
-          Not signed in <br />
-          <button onClick={() => signIn("auth0")}>Sign in</button>
+          Não está logado
+          <br />
+          <button onClick={() => signIn("auth0")}>Entrar</button>
         </div>
       )}
       {session && (
-        <>
-          Signed in as {session.user.email} <br />
-          <button onClick={signOut}>Sign out</button>
-        </>
+        <div className="text-3xl">
+          Logado com {session.user.email} <br />
+          <button onClick={signOut}>Sair</button>
+        </div>
       )}
       {loading && (
         <div className="text-5xl">
